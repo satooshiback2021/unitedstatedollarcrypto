@@ -1,0 +1,26 @@
+[Unit]
+Description=USD Coin's distributed currency daemon
+After=network.target
+
+[Service]
+User=unitedstatedollarcrypto
+Group=unitedstatedollarcrypto
+
+Type=forking
+PIDFile=/var/lib/unitedstatedollarcryptod/unitedstatedollarcryptod.pid
+
+ExecStart=/usr/bin/unitedstatedollarcryptod -daemon -pid=/var/lib/unitedstatedollarcryptod/unitedstatedollarcryptod.pid \
+          -conf=/etc/unitedstatedollarcrypto/unitedstatedollarcrypto.conf -datadir=/var/lib/unitedstatedollarcryptod
+
+ExecStop=-/usr/bin/unitedstatedollarcrypto-cli -conf=/etc/unitedstatedollarcrypto/unitedstatedollarcrypto.conf \
+         -datadir=/var/lib/unitedstatedollarcryptod stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Unitedstatedollarcrypto
+Comment=Unitedstatedollarcrypto P2P Cryptocurrency
+Exec=unitedstatedollarcrypto-qt %u
+Terminal=false
+Type=Application
+Icon=unitedstatedollarcrypto128
+MimeType=x-scheme-handler/unitedstatedollarcrypto;
+Categories=Office;Finance;
+Name[en_US]=unitedstatedollarcrypto-qt.desktop
